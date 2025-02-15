@@ -1,0 +1,91 @@
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background: linear-gradient(135deg, #6a11cb 0%, #2575fc 100%);
+}
+
+.slider-container {
+    width: 90%;
+    max-width: 1000px;
+    position: relative;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
+}
+
+.slider {
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    height: 70vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 1s ease-in-out;
+}
+
+/* Add background colors for each slide */
+.slide {
+    display: none;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    transition: opacity 1s ease-in-out, transform 1s ease-in-out;
+}
+
+.slide.active {
+    display: block;
+    opacity: 1;
+    transform: scale(1.05);
+}
+
+.slide:nth-child(1) {
+    background-color: #ff9a9e; /* Slide 1 color */
+}
+
+.slide:nth-child(2) {
+    background-color: #fad0c4; /* Slide 2 color */
+}
+
+.slide:nth-child(3) {
+    background-color: #fbc2eb; /* Slide 3 color */
+}
+
+img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain; /* Ensures vertical images fit properly */
+    object-position: center;
+}
+
+.controls {
+    display: flex;
+    justify-content: space-between;
+    position: absolute;
+    top: 50%;
+    width: 100%;
+    transform: translateY(-50%);
+    pointer-events: none;
+}
+
+.prev, .next {
+    pointer-events: all;
+    cursor: pointer;
+    font-size: 30px;
+    background: rgba(0, 0, 0, 0.6);
+    color: #fff;
+    padding: 15px;
+    border-radius: 50%;
+    margin: 0 10px;
+    transition: all 0.3s ease-in-out;
+    transform: scale(1);
+}
+
+.prev:hover, .next:hover {
+    background: rgba(0, 0, 0, 0.9);
+    transform: scale(1.2);
+}
